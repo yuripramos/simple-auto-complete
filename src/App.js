@@ -2,17 +2,18 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { fetchData } from "./api";
+import Autocomplete from "./components/Autocomplete";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = { listOfCountries: [] };
   }
 
   async componentDidMount() {
     this.setState({
-      data: await fetchData(
-        "https://mocki.io/v1/ddf70420-e3ce-4ba3-a50d-4aea44401c07"
+      listOfCountries: await fetchData(
+        "https://mocki.io/v1/cf3a3331-ea3f-4a82-88f8-db66ddb780b4"
       ),
     });
   }
@@ -22,16 +23,10 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>CODE GOES HERssssE</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
+        <content>
+          <Autocomplete options={this.state.listOfCountries} />
+        </content>
       </div>
     );
   }
