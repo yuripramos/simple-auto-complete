@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About
 
-run `yarn start` to check the available component running into the root of the application
+run `yarn && yarn start` to check the available component running into the root of the application
 
 Bonus: Check the branch `feature/hooks_solution` to check the application migrated to React hooks
 
